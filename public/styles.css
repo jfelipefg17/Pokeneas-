@@ -1,0 +1,16 @@
+/* public/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+img {
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+}
