@@ -21,9 +21,9 @@ function getContainerId() {
 // Ruta JSON con info aleatoria
 app.get('/api/pokenea', (req, res) => {
   const random = pokeneas[Math.floor(Math.random() * pokeneas.length)];
-  const { id, nombre, altura, habilidad } = random;
   const containerId = getContainerId();
-  res.json({ id, nombre, altura, habilidad, containerId });
+  // Renderizamos una vista en lugar de JSON crudo
+  res.render('api-pokenea', { pokenea: random, containerId });
 });
 
 // Ruta HTML con imagen + frase aleatoria

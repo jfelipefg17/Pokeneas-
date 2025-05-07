@@ -2,15 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title><%= pokenea.nombre %> - Pokenea</title>
+  <title>API Pokenea – <%= pokenea.nombre %></title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <div class="container">
-    <h1><%= pokenea.nombre %></h1>
+    <h1><%= pokenea.nombre %> (ID: <%= pokenea.id %>)</h1>
     <img src="<%= pokenea.imagen %>" alt="<%= pokenea.nombre %>" width="300" />
     <ul>
       <li><strong>Frase:</strong> <em>"<%= pokenea.frase %>"</em></li>
+      <li><strong>Altura:</strong> <%= pokenea.altura %></li>
+      <li><strong>Habilidad:</strong> <%= pokenea.habilidad %></li>
       <li><strong>ID Contenedor:</strong> <%= containerId %></li>
     </ul>
   </div>
