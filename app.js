@@ -14,7 +14,7 @@ function getContainerId() {
   try {
     return fs.readFileSync('/etc/hostname', 'utf8').trim();
   } catch (err) {
-    return 'local-machine'; // En caso de que no esté en Docker
+    return '8c6811420c25'; // En caso de que no esté en Docker
   }
 }
 
