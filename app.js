@@ -8,7 +8,7 @@ const pokeneas = require('./pokeneas/data');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 function getContainerId() {
   try {
