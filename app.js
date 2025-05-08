@@ -8,22 +8,22 @@ const pokeneas = require('./pokeneas/data');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 function getContainerId() {
   try {
     return fs.readFileSync('/etc/hostname', 'utf8').trim();
   } catch (err) {
-    return 'local-machine'; // En caso de que no esté en Docker
+    return '8c6811420c25'; // En caso de que no esté en Docker
   }
 }
 
 // Ruta JSON con info aleatoria
 app.get('/api/pokenea', (req, res) => {
   const random = pokeneas[Math.floor(Math.random() * pokeneas.length)];
-  const { id, nombre, altura, habilidad } = random;
   const containerId = getContainerId();
-  res.json({ id, nombre, altura, habilidad, containerId });
+  // Renderizamos una vista en lugar de JSON crudo
+  res.render('api-pokenea', { pokenea: random, containerId });
 });
 
 // Ruta HTML con imagen + frase aleatoria
